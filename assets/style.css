@@ -14,9 +14,11 @@ body {
 }
 
 .title {
+  font-family: "Gloria Hallelujah", cursive;
   font-size: 50px;
   font-weight: bold;
   width: 100%;
+  color: #abffb9;
 }
 
 /* addmenu */
@@ -27,7 +29,6 @@ body {
   border-radius: 10px;
   position: relative;
   text-align: left;
-  display: none;
 }
 
 /* input task */
