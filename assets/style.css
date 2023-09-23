@@ -9,8 +9,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10%;
-  color: #333;
+  padding: 5% 10%;
+  color: #abffb9;
+  background-color: #313131;
 }
 
 .title {
@@ -21,11 +22,25 @@ body {
   color: #abffb9;
 }
 
-/* addmenu */
+/*
+ main visual 
+*/
+.flex__wrap {
+  display: flex;
+}
+.task__list {
+  border: 2px solid #abffb9;
+  width: 100%;
+  height: 650px;
+  margin-top: 60px;
+}
+/* 
+addmenu 
+*/
 .add__menu {
   border: 2px solid #abffb9;
   width: 100%;
-  height: 700px;
+  height: 600px;
   border-radius: 10px;
   position: relative;
   text-align: left;
@@ -43,7 +58,7 @@ body {
   width: 400px;
   height: 60px;
   font-size: 20px;
-  color: #333;
+  color: #ffffff;
   margin: 30px 5% 0;
 }
 .user__input:focus {
@@ -68,19 +83,19 @@ body {
   border-radius: 50%;
 }
 .color__item:nth-child(1) {
-  background-color: #333;
+  background-color: #ffffff;
 }
 .color__item:nth-child(2) {
-  background-color: #ffa8a8;
+  background-color: #fd6363;
 }
 .color__item:nth-child(3) {
-  background-color: #f4ff8f;
+  background-color: #fcff36;
 }
 .color__item:nth-child(4) {
-  background-color: #a3a9fc;
+  background-color: #949bff;
 }
 .color__item:nth-child(5) {
-  background-color: #ffdd93;
+  background-color: #d25fff;
 }
 
 /* example  */
@@ -101,7 +116,7 @@ input[type="checkbox"] + label {
   padding-left: 35px;
   margin-bottom: 20px;
   font: 25px/20px "Open Sans", Arial, sans-serif;
-  color: #333;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -114,7 +129,7 @@ input[type="checkbox"] + label:before {
   display: block;
   width: 20px;
   height: 20px;
-  border: 1px solid #333;
+  border: 1px solid #ffffff;
   position: absolute;
   left: 0;
   top: 0;
