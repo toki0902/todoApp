@@ -27,12 +27,104 @@ body {
 */
 .flex__wrap {
   display: flex;
+  margin-top: 30px;
+}
+.addTrigger {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #abffb9;
+  border-radius: 50%;
+  background-color: #313131;
+  transition: all 0.3s;
+}
+.addTrigger:hover {
+  background-color: #ffffff;
+}
+.addmark {
+  margin-top: 50%;
+  translate: 0 -50%;
+  display: inline-block;
+  vertical-align: middle;
+  color: #abffb9;
+  width: 2em;
+  height: 0.1em;
+  background: currentColor;
+  border-radius: 0.1em;
+  position: relative;
+}
+.addmark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  transform: rotate(90deg);
+}
+.dump {
+  margin-left: 200px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #abffb9;
+  border-radius: 50%;
+  background-color: #313131;
+  transition: all 0.5s;
+}
+.dump:hover {
+  width: 100px;
+  border-radius: 0;
+}
+.dump:hover .dumpmark {
+  margin: 26px 0 0 20px;
+}
+.dumpmark {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(1.5, 1.5);
+  width: 10px;
+  height: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 2px, inset -2px 0 0, inset 2px 0 0;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  margin: calc(50% + 2px) 50%;
+  translate: -50% -50%;
+  transition: all 0.5s;
+}
+.dumpmark::after,
+.dumpmark::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+}
+.dumpmark::after {
+  background: currentColor;
+  border-radius: 3px;
+  width: 16px;
+  height: 2px;
+  top: -4px;
+  left: -5px;
+}
+.dumpmark::before {
+  width: 10px;
+  height: 4px;
+  border: 2px solid;
+  border-bottom: transparent;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  top: -7px;
+  left: -2px;
 }
 .task__list {
   border: 2px solid #abffb9;
   width: 100%;
   height: 650px;
   margin-top: 60px;
+  border-radius: 10px;
 }
 /* 
 addmenu 
@@ -44,6 +136,7 @@ addmenu
   border-radius: 10px;
   position: relative;
   text-align: left;
+  display: none;
 }
 
 /* input task */
