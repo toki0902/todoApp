@@ -20,7 +20,7 @@
   <body>
     <h1 class="title">todoアプリ</h1>
     <div class="flex__wrap">
-      <div class="addTrigger">
+      <div class="addTrigger" id="js-addTrigger">
         <span class="addmark"></span>
       </div>
       <div class="dump">
@@ -31,34 +31,42 @@
     <ul class="task__list">
       <li class="task__item"></li>
     </ul>
-    <div class="add__menu">
-      <p class="addtask__text">1.タスクの入力</p>
-      <input type="text" class="user__input" placeholder="タスクを入力してね" />
-      <p class="color__text">2.カラーの選択</p>
-      <ul class="color__list">
-        <li class="color__item"></li>
-        <li class="color__item"></li>
-        <li class="color__item"></li>
-        <li class="color__item"></li>
-        <li class="color__item"></li>
-      </ul>
-      <ul class="example__list">
-        <li class="example__item">
-          <input type="checkbox" id="box-1" />
-          <label for="box-1">こんな感じになるよ！</label>
-        </li>
-        <li class="example__item">
-          <input type="checkbox" id="box-2" checked />
-          <label for="box-2">こんな感じになるよ！</label>
-        </li>
-      </ul>
-      <div class="add-task__btn">タスクを追加</div>
-      <div class="close__absolute">
-        <div class="close__btn">
-          <span></span>
-          <span></span>
+    <div id="mask"></div>
+    <div class="add__menu" id="js-addMenu">
+      <div class="position__wrap">
+        <p class="addtask__text">1.タスクの入力</p>
+        <input
+          type="text"
+          class="user__input"
+          placeholder="タスクを入力してね"
+        />
+        <p class="color__text">2.カラーの選択</p>
+        <ul class="color__list">
+          <li class="color__item"></li>
+          <li class="color__item"></li>
+          <li class="color__item"></li>
+          <li class="color__item"></li>
+          <li class="color__item"></li>
+        </ul>
+        <ul class="example__list">
+          <li class="example__item">
+            <input type="checkbox" id="box-1" />
+            <label for="box-1">こんな感じになるよ！</label>
+          </li>
+          <li class="example__item">
+            <input type="checkbox" id="box-2" checked />
+            <label for="box-2">こんな感じになるよ！</label>
+          </li>
+        </ul>
+        <div class="add-task__btn">タスクを追加</div>
+        <div class="close__absolute">
+          <div class="close__btn">
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </div>
+    <script src="assets/common.js"></script>
   </body>
 </html>
