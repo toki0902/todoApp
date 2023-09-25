@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5% 10%;
+  padding: 5% 30%;
   color: #abffb9;
   background-color: #313131;
 }
@@ -79,6 +79,9 @@ body {
 .dump:hover .dumpmark {
   margin: 26px 0 0 20px;
 }
+.dump:hover .checkmark {
+  display: block;
+}
 .dumpmark {
   box-sizing: border-box;
   position: relative;
@@ -119,6 +122,23 @@ body {
   top: -7px;
   left: -2px;
 }
+.checkmark {
+  position: relative;
+  display: none;
+}
+.checkmark::before {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 150px;
+  border-bottom: 4px solid #abffb9;
+  border-left: 8px solid #abffb9;
+  transform: rotate(-45deg) perspective(30px) rotateY(60deg);
+  transform-origin: 0 50%;
+  position: absolute;
+  bottom: 7px;
+  left: 65px;
+}
 .task__list {
   border: 2px solid #abffb9;
   width: 100%;
@@ -148,7 +168,7 @@ addmenu
   text-align: center;
   border: 1px solid #abffb9;
   border-radius: 20px;
-  width: 400px;
+  width: 70%;
   height: 60px;
   font-size: 20px;
   color: #ffffff;
@@ -245,6 +265,7 @@ input[type="checkbox"]:checked + label:before {
 
 /* addtask btn */
 .add-task__btn {
+  color: #313131;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -254,9 +275,12 @@ input[type="checkbox"]:checked + label:before {
   position: absolute;
   bottom: 100px;
   left: 30px;
+  background-color: #abffb9;
+  transition: all 0.3s;
 }
 .add-task__btn:hover {
-  background-color: #d9f8bd;
+  background-color: #313131;
+  color: #abffb9;
 }
 
 /* close btn */
@@ -273,7 +297,7 @@ input[type="checkbox"]:checked + label:before {
 .close__btn span {
   width: 70%;
   height: 2px;
-  background-color: #333;
+  background-color: #abffb9;
   position: absolute;
   top: 0;
 }
@@ -282,4 +306,18 @@ input[type="checkbox"]:checked + label:before {
 }
 .close__btn span:nth-child(2) {
   rotate: -45deg;
+}
+
+@media screen and (max-width: 1400px) {
+  .user__input {
+    width: 90%;
+  }
+  .color__list {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .color__list {
+    width: 90%;
+  }
 }
