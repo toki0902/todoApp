@@ -157,11 +157,13 @@ body {
   background-color: #000;
   position: fixed;
   display: none;
-  opacity: 0.8;
+  opacity: 0;
+  transition: all 0.5s;
 }
 #mask.open {
   display: block;
   z-index: 1;
+  opacity: 0.8;
 }
 
 /* 
@@ -323,12 +325,16 @@ input[type="checkbox"]:checked + label:before {
   height: 40px;
   position: relative;
 }
+.close__btn:hover span {
+  transform: scale(1.3);
+}
 .close__btn span {
   width: 70%;
   height: 2px;
   background-color: #abffb9;
   position: absolute;
   top: 0;
+  transition: all 0.3s;
 }
 .close__btn span:nth-child(1) {
   rotate: 45deg;
