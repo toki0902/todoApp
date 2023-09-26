@@ -1,0 +1,359 @@
+@charset "utf-8";
+
+body {
+  font-size: 16px;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 25%;
+  color: #abffb9;
+  background-color: #313131;
+}
+
+.title {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 50px;
+  font-weight: bold;
+  width: 100%;
+  color: #abffb9;
+}
+
+/*
+ main visual 
+*/
+.flex__wrap {
+  display: flex;
+  margin-top: 30px;
+}
+.addTrigger {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #abffb9;
+  border-radius: 50%;
+  background-color: #313131;
+  transition: all 0.3s;
+}
+.addTrigger:hover {
+  background-color: #ffffff;
+}
+.addmark {
+  margin-top: 50%;
+  translate: 0 -50%;
+  display: inline-block;
+  vertical-align: middle;
+  color: #abffb9;
+  width: 2em;
+  height: 0.1em;
+  background: currentColor;
+  border-radius: 0.1em;
+  position: relative;
+}
+.addmark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  transform: rotate(90deg);
+}
+.dump {
+  margin-left: 200px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #abffb9;
+  border-radius: 50%;
+  background-color: #313131;
+  transition: all 0.5s;
+}
+.dump:hover {
+  width: 100px;
+  border-radius: 0;
+}
+.dump:hover .dumpmark {
+  margin: 26px 0 0 20px;
+}
+.dump:hover .checkmark {
+  opacity: 1;
+}
+.dumpmark {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(1.5, 1.5);
+  width: 10px;
+  height: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 2px, inset -2px 0 0, inset 2px 0 0;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  margin: calc(50% + 2px) 50%;
+  translate: -50% -50%;
+  transition: all 0.5s;
+}
+.dumpmark::after,
+.dumpmark::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+}
+.dumpmark::after {
+  background: currentColor;
+  border-radius: 3px;
+  width: 16px;
+  height: 2px;
+  top: -4px;
+  left: -5px;
+}
+.dumpmark::before {
+  width: 10px;
+  height: 4px;
+  border: 2px solid;
+  border-bottom: transparent;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  top: -7px;
+  left: -2px;
+}
+.checkmark {
+  position: relative;
+  opacity: 0;
+  transition: 0.3s;
+  right: 45px;
+}
+.checkmark::before {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 150px;
+  border-bottom: 4px solid #abffb9;
+  border-left: 8px solid #abffb9;
+  transform: rotate(-45deg) perspective(30px) rotateY(60deg);
+  transform-origin: 0 50%;
+  position: absolute;
+  bottom: 7px;
+  left: 65px;
+}
+.task__list {
+  border: 2px solid #abffb9;
+  width: 100%;
+  height: 75%;
+  margin-top: 60px;
+  border-radius: 10px;
+  margin-bottom: 60px;
+}
+/* 
+ mask
+*/
+#mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  position: fixed;
+  display: none;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#mask.open {
+  display: block;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* 
+addmenu 
+*/
+.add__menu {
+  background-color: #313131;
+  border: 2px solid #abffb9;
+  top: 50px;
+  left: -100%;
+  width: 40%;
+  height: 600px;
+  border-radius: 10px;
+  text-align: left;
+  position: fixed;
+  z-index: 5;
+  transition: all 0.5s;
+}
+.add__menu.open {
+  left: 100px;
+}
+.position__wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/* input task */
+.add__menu .addtask__text {
+  font-size: 20px;
+  margin: 30px 5% 0;
+}
+.user__input {
+  text-align: center;
+  border: 1px solid #abffb9;
+  border-radius: 20px;
+  width: 70%;
+  height: 60px;
+  font-size: 20px;
+  color: #ffffff;
+  margin: 30px 5% 0;
+}
+.user__input:focus {
+  outline: 1px solid #abffb9;
+}
+
+/* choice color */
+.color__text {
+  font-size: 20px;
+  margin: 30px 5% 0;
+}
+
+.color__list {
+  margin: 30px 5% 0;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+.color__item {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.color__item:nth-child(1) {
+  background-color: #ffffff;
+}
+.color__item:nth-child(2) {
+  background-color: #fd6363;
+}
+.color__item:nth-child(3) {
+  background-color: #fcff36;
+}
+.color__item:nth-child(4) {
+  background-color: #949bff;
+}
+.color__item:nth-child(5) {
+  background-color: #d25fff;
+}
+
+/* example  */
+.example__list {
+  margin: 50px 5% 0;
+}
+.example__item {
+  margin-top: 20px;
+  font-size: 30px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 25px/20px "Open Sans", Arial, sans-serif;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label:last-child {
+  margin-bottom: 0;
+}
+
+input[type="checkbox"] + label:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ffffff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.6;
+  -webkit-transition: all 0.12s, border-color 0.08s;
+  transition: all 0.12s, border-color 0.08s;
+}
+
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* addtask btn */
+.add-task__btn {
+  color: #313131;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  border: 1px solid #abffb9;
+  position: absolute;
+  bottom: 100px;
+  left: 30px;
+  background-color: #abffb9;
+  transition: all 0.3s;
+}
+.add-task__btn:hover {
+  background-color: #313131;
+  color: #abffb9;
+}
+
+/* close btn */
+.close__absolute {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.close__btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.close__btn:hover span {
+  transform: scale(1.3);
+}
+.close__btn span {
+  width: 70%;
+  height: 2px;
+  background-color: #abffb9;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s;
+}
+.close__btn span:nth-child(1) {
+  rotate: 45deg;
+}
+.close__btn span:nth-child(2) {
+  rotate: -45deg;
+}
+
+@media screen and (max-width: 1400px) {
+  .user__input {
+    width: 90%;
+  }
+  .color__list {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .color__list {
+    width: 90%;
+  }
+}
