@@ -23,9 +23,17 @@ $mask.addEventListener("click", () => {
 
 for(let i=1;i < $color.length + 1; i++){
   $color[i - 1].addEventListener("click" , ()=>{
+    // 選択されたカラーを取得
     let getColor = getComputedStyle($color[i - 1]).backgroundColor;
-    getComputedStyle($label[0]).color = (getColor);
-    getComputedStyle($label[1]).color = (getColor);
+    // それを例文に反映
+    for(let p = 1;p <= $label.length;p++){
+      $label[p - 1].style.color=(getColor);
+    };
+    // 選択されたカラーにselectedクラスを追加。それ以外は消去。
+    for(let q=1;q < $color.length + 1; q++){
+      $color[q - 1].classList.remove("selected");
+    }
+    $color[i - 1].classList.add("selected");
 });
 };
 
