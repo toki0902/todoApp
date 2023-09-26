@@ -21,4 +21,4 @@ todo アプリの仕様書　
 addmenu内
 ・タスク追加を押すと、inputのテキストを読み取って、カラーを反映させてtask__listに追加
 ・カラーを選択すると、example に反映される。
-・close__btn かmaskを押すとaddmenuが消える。
+・close__btn かmaskを押すとaddmenuが消える。 完了
