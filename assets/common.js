@@ -38,3 +38,4 @@ for(let i=1;i < $color.length + 1; i++){
 };
 
 
+
