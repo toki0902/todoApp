@@ -149,6 +149,14 @@ body {
   border-radius: 10px;
   margin-bottom: 60px;
 }
+.task__item{
+  margin-top: 20px;
+  margin-left: 5%;
+  text-align: left;
+}
+.task__item.used{
+  text-decoration: line-through;
+}
 /* 
  mask
 */
@@ -226,7 +234,7 @@ addmenu
   height: 50px;
   border-radius: 50%;
 }
-.color__item.selected{
+.color__item#selected{
   border:3px solid #abffb9;
 }
 .color__item:nth-child(1) {
