@@ -32,7 +32,7 @@ for(let i=1;i < $color.length + 1; i++){
     for(let p = 1;p <= $label.length;p++){
       $label[p - 1].style.color=(getColor);
     };
-    // 選択されたカラーにselectedクラスを追加。それ以外は消去。
+    // 選択されたカラーにselectedを追加。それ以外は消去。
     for(let q=1;q < $color.length + 1; q++){
       $color[q - 1].removeAttribute("id","selected");
     }
