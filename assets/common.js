@@ -29,9 +29,9 @@ for(let i=1;i < $color.length + 1; i++){
     // 選択されたカラーを取得
     let getColor = getComputedStyle($color[i - 1]).backgroundColor;
     // それを例文に反映
-    for(let p = 1;p <= $label.length;p++){
-      $label[p - 1].style.color=(getColor);
-    };
+    for (let label of document.querySelectorAll('.example__list label')) {
+      label.style.color = getColor;
+    }
     // 選択されたカラーにselectedを追加。それ以外は消去。
     for(let q=1;q < $color.length + 1; q++){
       $color[q - 1].removeAttribute("id","selected");
@@ -40,10 +40,12 @@ for(let i=1;i < $color.length + 1; i++){
 });
 };
 
+// タスク追加のボタン
 $addButtun.addEventListener('click', ()=>{
   // 必要な要素を取得
   let $userText = $addMenu.querySelector(".user__input").value;
   const $selectedColor = $addMenu.querySelector("#selected");
+  if($userText !== ""){
   // 要素を生成
   const newItem = document.createElement("li");
   const newInput = document.createElement("input");
@@ -51,7 +53,7 @@ $addButtun.addEventListener('click', ()=>{
   // クラス、属性を付与
   newLabel.textContent = ($userText);
   newLabel.setAttribute("for","box-"+(document.querySelectorAll("input").length));
-  newLabel.style.color = ($selectedColor);
+  newLabel.style.color = getComputedStyle($selectedColor).backgroundColor;
   newItem.classList.add("task__item");
   newInput.setAttribute("id","box-"+(document.querySelectorAll("input").length));
   newInput.setAttribute("type", "checkbox");
@@ -61,6 +63,12 @@ $addButtun.addEventListener('click', ()=>{
   newItem.appendChild(newLabel);
   // 状態をリセット
   $userText = $addMenu.querySelector(".user__input").value = ("");
+  }
 });
+
+// チェック機能考えたいなあーー
+// むずいのが、個別にcheckedを入れること！
+// それで来たら後は簡単です。頑張って考えてね。
+  
 
 
