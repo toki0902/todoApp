@@ -6,6 +6,8 @@ const $color = document.querySelectorAll(".color__item");
 const $label = document.getElementsByTagName("label");
 const $addButtun = document.querySelector(".add-task__btn");
 const $taskList = document.querySelector(".task__list");
+const $dump = document.querySelector(".dump");
+
 
 // addmenu表示ボタン
 $addTrigger.addEventListener("click", function () {
@@ -64,11 +66,21 @@ $addButtun.addEventListener('click', ()=>{
   // 状態をリセット
   $userText = $addMenu.querySelector(".user__input").value = ("");
   }
-});
+  const $taskItem = $taskList.getElementsByClassName("task__item");
+  for(let h =1;h < $taskItem.length + 1;h++){
+    $taskItem[h-1].removeEventListener;
+  $taskItem[h-1].addEventListener('click', function(){$taskItem[h-1].classList.toggle("used")})
+  }
+  });
 
-// チェック機能考えたいなあーー
-// むずいのが、個別にcheckedを入れること！
-// それで来たら後は簡単です。頑張って考えてね。
-  
+  // trush機能
+$dump.addEventListener("click", function(){
+  $taskList.querySelectorAll(".used").forEach(function(used){
+    used.remove();})})
+
+
+
+
+
 
 
