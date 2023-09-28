@@ -154,9 +154,7 @@ body {
   margin-left: 5%;
   text-align: left;
 }
-.task__item.used{
-  text-decoration: line-through;
-}
+
 /* 
  mask
 */
@@ -304,6 +302,9 @@ input[type="checkbox"]:checked + label:before {
   border-left-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+input[type="checkbox"]:checked + label{
+  text-decoration: line-through;
 }
 
 /* addtask btn */
